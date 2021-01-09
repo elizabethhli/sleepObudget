@@ -8,15 +8,19 @@ def guess_number():
     print("Welcome to the Guess The Mystery Number game!")
     print("You will have a total of 10 guesses to try and guess the mystery number.")
     print("The fewer guesses it takes, the greater the discount you get! Ready?")
-    user_guess = input("Guess the mystery number between 0-100: ")
     
-    # check if guess is a valid input
-    while not user_guess.isdigit() or not 0 <= int(user_guess) <= 100:
-        user_guess = input("Please input a number between 0 and 100: ")
+    user_guess = input("Guess the mystery number between 0-100: ")
+
         
     # check if guess is correct
-    while guess < 10 and (int(user_guess) != myst_num):
+    while guess < 10: 
+        
+        # check if guess is a valid input
+        while not user_guess.isdigit() or not 0 <= int(user_guess) <= 100:
+            user_guess = input("Please input a number between 0 and 100: ")
+        
         guess += 1
+        
         many_guesses_left = "You have " + str(10 - guess) + " guesses left."
         one_guess_left = "You have " + str(10 - guess) + " guess left."        
         
@@ -34,19 +38,24 @@ def guess_number():
                 print(one_guess_left)
             else:
                 print(many_guesses_left)
+        else:
+            # if user guesses correctly
+            break 
         
-        if guess < 10:
+        if guess < 10 and user_guess != myst_num:
             user_guess = input("Guess the mystery number between 0-100: ")
+
         
     # check if they ran out of guesses or guessed correctly
     if guess == 10:
         print("Sorry, you took up all your guesses. \nThe mystery number was: " + str(myst_num)\
               + "! \nBetter luck next time!")
     else:
-        print("The number was indeed "+ str(myst_num)+ ". You took "+str(guess)+ \
+        print("The number was indeed "+ str(myst_num)+ ". You took "+str(guess-1)+ \
               " guesses to find the mystery number!")
 
-        print("Your discount for food is " + str(int(check_discount(guess)*100)) + "%! Good job!")
+        print("Your discount for food is " + str(int(check_discount(guess-1)*100)) + \
+              "%! Good job!")
        
        
 def check_discount(guesses: int) -> float:
@@ -64,7 +73,7 @@ def check_discount(guesses: int) -> float:
     else:
         return 0.05
 
-guess_number()
+# guess_number()
 
 
 def roll_dice():
