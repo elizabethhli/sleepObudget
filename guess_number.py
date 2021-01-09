@@ -1,9 +1,9 @@
 import random
 
 def guess_number():
-    myst_num=random.randint(0,100)
+    myst_num = random.randint(0, 100)
     
-    guess=0
+    guess = 0
     
     user_guess = input("Guess the mystery number between 0-100: ")
     
@@ -12,31 +12,31 @@ def guess_number():
         user_guess = input("Please input a number between 0 and 100: ")
         
     # check if guess is correct
-    while guess < 5 and (int(user_guess) != myst_num):
+    while guess < 10 and (int(user_guess) != myst_num):
         guess += 1
-        many_guesses_left = "You have " + str(5-guess) + " guesses left."
-        one_guess_left = "You have " + str(5-guess) + " guess left."        
+        many_guesses_left = "You have " + str(10 - guess) + " guesses left."
+        one_guess_left = "You have " + str(10 - guess) + " guess left."        
         
         if myst_num > int(user_guess):
             print("Number is too small!")
             # decide if printing 'guesses' or 'guess'
-            if guess == 5:
+            if guess == 10:
                 print(one_guess_left)
             else:
                 print(many_guesses_left)
         elif myst_num < int(user_guess):
             print("Number is too big!")
             # decide if printing 'guesses' or 'guess'
-            if guess == 5:
+            if guess == 10:
                 print(one_guess_left)
             else:
                 print(many_guesses_left)
         
-        if guess < 5:
+        if guess < 10:
             user_guess = input("Guess the mystery number between 0-100: ")
         
     # check if they ran out of guesses or guessed correctly
-    if guess == 5:
+    if guess == 10:
         print("Sorry, you took up all your guesses. \nThe mystery number was: " + str(myst_num)\
               + "! \nBetter luck next time!")
     else:
@@ -51,17 +51,17 @@ def check_discount(guesses: int) -> float:
     number of guesses used.
     """
     if guesses <= 2:
-        discount = 0.05
-    elif guesses <= 3:
-        discount = 0.1
+        return 0.25 
     elif guesses <= 4:
-        discount = 0.15
-    elif guesses <= 5:
-        discount = 0.2
-    
-    return discount
+        return 0.2
+    elif guesses <= 6:
+        return 0.15
+    elif guesses <= 8:
+        return 0.1
+    else:
+        return 0.05
 
-# guess_number()
+guess_number()
 
 
 def roll_dice():
