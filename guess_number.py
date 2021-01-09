@@ -50,11 +50,11 @@ def check_discount(guesses: int) -> float:
     """ Helper function for guess_number(). Return discount earned based on
     number of guesses used.
     """
-    if guesses <=2:
+    if guesses <= 2:
         discount = 0.05
     elif guesses <= 3:
         discount = 0.1
-    elif guesses <=4:
+    elif guesses <= 4:
         discount = 0.15
     elif guesses <= 5:
         discount = 0.2
