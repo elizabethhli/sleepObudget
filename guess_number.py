@@ -5,6 +5,9 @@ def guess_number():
     
     guess = 0
     
+    print("Welcome to the Guess The Mystery Number game!")
+    print("You will have a total of 10 guesses to try and guess the mystery number.")
+    print("The fewer guesses it takes, the greater the discount you get! Ready?")
     user_guess = input("Guess the mystery number between 0-100: ")
     
     # check if guess is a valid input
