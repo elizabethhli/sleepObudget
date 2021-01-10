@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/icon"-->
+<!--        android:layout_width="47dp"-->
+<!--        android:layout_height="47dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:src="@drawable/back" />-->
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="323dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/input_field"
+        android:fontFamily="@font/regular"
+        android:paddingTop="5.4dp"
+        android:text="Marshmallow"
+        android:textColor="@color/darkblue"
+        android:textSize="19sp" />
+
+    <!--    <ImageView-->
+<!--        android:id="@+id/delete"-->
+<!--        android:layout_width="17dp"-->
+<!--        android:layout_height="21dp"-->
+<!--        android:visibility="invisible"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_marginEnd="21dp"-->
+<!--        android:layout_marginRight="21dp"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:src="@drawable/delete" />-->
+
+</RelativeLayout>

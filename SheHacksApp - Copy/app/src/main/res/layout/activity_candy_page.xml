@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chores_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true"
+    tools:context=".ChipsPage"
+    tools:openDrawer="start">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/CurrentChores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Candy"
+            android:textColor="@color/darkgreen"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.14" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/linear_roommates_layout"
+            android:layout_width="323dp"
+            android:layout_height="340dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/CurrentChores">
+
+            <LinearLayout
+                android:layout_width="323dp"
+                android:layout_height="400dp">
+
+                <ListView
+                    android:id="@+id/roommates_list"
+                    android:layout_width="323dp"
+                    android:layout_height="287dp"
+                    android:layout_weight="1"
+                    android:divider="@null"
+                    android:gravity="center"
+                    android:nestedScrollingEnabled="true"
+                    android:scrollbars="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                </ListView>
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="183dp"
+            android:layout_height="43dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/button_green"
+            android:fontFamily="@font/regular"
+            android:gravity="center"
+            android:text="Back to Menu"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear_roommates_layout"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

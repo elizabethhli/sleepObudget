@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SheHacksApp</string>
+    <string name="login_message">Log in using the email and\npassword that you signed up\nwith. If you forgot your password,\nthen click forgot password.</string>
+    <string name="signup_message">Create one Choremates account\nfor everyone. All roommates\nshould know both the email\nand password.</string>
+</resources>

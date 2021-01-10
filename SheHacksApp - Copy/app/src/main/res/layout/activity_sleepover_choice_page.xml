@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!--            <ImageView-->
+<!--                android:layout_width="55dp"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:background="@drawable/ic_kitchen"-->
+<!--                android:elevation="100dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.300"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.371" />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="55dp"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:background="@drawable/ic_bathroom"-->
+<!--                android:elevation="100dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.300"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.479" />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="55dp"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:background="@drawable/ic_livingroom"-->
+<!--                android:elevation="100dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.300"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.587" />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="55dp"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:background="@drawable/ic_general"-->
+<!--                android:elevation="100dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.300"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.696" />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="55dp"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:background="@drawable/ic_bedroom"-->
+<!--                android:elevation="100dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.300"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.805" />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="55dp"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:background="@drawable/ic_custom"-->
+<!--                android:elevation="100dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.300"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.914" />-->
+
+
+            <TextView
+                android:id="@+id/AddChores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/bold"
+                android:text="Add Chores"
+                android:textColor="@color/darkgreen"
+                android:textSize="53sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.101" />
+
+            <TextView
+                android:id="@+id/add_chores_blurb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="100dp"
+                android:fontFamily="@font/regular"
+                android:gravity="center"
+                android:text="Pick what kind of chores you want\nto add."
+                android:textColor="@color/darkgreen"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.257" />
+
+            <Button
+                android:id="@+id/foodbutton"
+                android:layout_width="170dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="288dp"
+                android:background="@drawable/button_green"
+                android:fontFamily="@font/regular"
+                android:gravity="center"
+                android:text="Food"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/venuebutton"
+                android:layout_width="170dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="361dp"
+                android:background="@drawable/button_green"
+                android:fontFamily="@font/regular"
+                android:gravity="center"
+                android:text="Venue"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/foodbutton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/drinksbutton"
+                android:layout_width="170dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="432dp"
+                android:background="@drawable/button_green"
+                android:fontFamily="@font/regular"
+                android:gravity="center"
+                android:text="Drinks"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/venuebutton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/entertainmentbutton"
+                android:layout_width="170dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="505dp"
+                android:background="@drawable/button_green"
+                android:fontFamily="@font/regular"
+                android:gravity="center"
+                android:text="Entertainment"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/drinksbutton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

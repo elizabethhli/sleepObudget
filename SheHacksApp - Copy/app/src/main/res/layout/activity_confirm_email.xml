@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfirmEmail">
+
+    <EditText
+        android:id="@+id/emailCPass"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginLeft="99dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginRight="99dp"
+        android:width="300dp"
+        android:height="120dp"
+        android:background="@drawable/input_field"
+        android:ems="10"
+        android:fontFamily="@font/regular"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/hint"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="236dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginLeft="163dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:background="@drawable/button_green"
+        android:fontFamily="@font/regular"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailCPass" />
+
+    <TextView
+        android:id="@+id/forgotPassword_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="186dp"
+        android:layout_marginRight="186dp"
+        android:layout_marginBottom="181dp"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:text="Forgot\nPassword"
+        android:textColor="@color/darkgreen"
+        android:textSize="53sp"
+        app:layout_constraintBottom_toTopOf="@+id/emailCPass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/login_blurb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="182dp"
+        android:layout_marginLeft="182dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginRight="180dp"
+        android:layout_marginBottom="130dp"
+        android:fontFamily="@font/regular"
+        android:gravity="center"
+        android:text="Enter the email you signed up with."
+        android:textColor="@color/darkgreen"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/emailCPass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
