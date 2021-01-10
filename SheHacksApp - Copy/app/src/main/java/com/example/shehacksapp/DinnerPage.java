@@ -19,13 +19,29 @@ public class DinnerPage extends AppCompatActivity {
     ListView dinnerList;
     CustomAdapter customAdapter;
     Button back;
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dinner_page);
 
+        if (LoginPage.getEmail() == null || LoginPage.getEmail().equals("")) {
+            email = SignUpPage.getEmail();
+        } else {
+            email = LoginPage.getEmail();
+        }
+
         dinnerList = findViewById(R.id.roommates_list);
+
+        Button cart = findViewById(R.id.checkout);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DinnerPage.this, FoodOptionsPage.class);
+                startActivity(intent);
+            }
+        });
 
         ArrayList<String> dinner = new ArrayList<String>() {{
             add("Pizza");
@@ -55,7 +71,7 @@ public class DinnerPage extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DatabaseHelper db = new DatabaseHelper(DinnerPage.this);
-                boolean insert = db.insertFoodDrinks(dinner.get(position), pDinner.get(position), "1");
+                boolean insert = db.insertFoodDrinks(email, dinner.get(position), pDinner.get(position), "1");
 
                 androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(DinnerPage.this, R.style.AlertDialogTheme);
                 final View view2 = getLayoutInflater().inflate(R.layout.layout_alert_dialog_amount, null);

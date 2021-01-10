@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.google.android.material.chip.Chip;
+
 import java.util.ArrayList;
 
 public class ChipsPage extends Activity {
@@ -19,9 +21,7 @@ public class ChipsPage extends Activity {
     ListView chipsList;
     CustomAdapter customAdapter;
     Button back;
-//    ArrayList<Type> obj = new ArrayList<Type>(
-//            Arrays.asList(Obj A, Obj B, Obj C, ....so on));
-//    ArrayList<double> pChips = {2.97, 2.97, 2.97, 2.97};
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,21 @@ public class ChipsPage extends Activity {
         setContentView(R.layout.activity_chips_page);
 
         chipsList = findViewById(R.id.roommates_list);
+
+        if (LoginPage.getEmail() == null || LoginPage.getEmail().equals("")) {
+            email = SignUpPage.getEmail();
+        } else {
+            email = LoginPage.getEmail();
+        }
+
+        Button cart = findViewById(R.id.checkout);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChipsPage.this, FoodOptionsPage.class);
+                startActivity(intent);
+            }
+        });
 
         ArrayList<String> chips = new ArrayList<String>() {{
             add("Ketchup");
@@ -51,7 +66,7 @@ public class ChipsPage extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DatabaseHelper db = new DatabaseHelper(ChipsPage.this);
-                boolean insert = db.insertFoodDrinks(chips.get(position), pChips.get(position), "1");
+                boolean insert = db.insertFoodDrinks(email, chips.get(position), pChips.get(position), "1");
 
                 androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(ChipsPage.this, R.style.AlertDialogTheme);
                 final View view2 = getLayoutInflater().inflate(R.layout.layout_alert_dialog_amount, null);

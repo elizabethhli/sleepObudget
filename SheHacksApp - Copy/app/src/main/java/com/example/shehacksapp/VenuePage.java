@@ -19,11 +19,27 @@ public class VenuePage extends AppCompatActivity {
     ListView venueList;
     CustomAdapter customAdapter;
     Button back;
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_page);
+
+        if (LoginPage.getEmail() == null || LoginPage.getEmail().equals("")) {
+            email = SignUpPage.getEmail();
+        } else {
+            email = LoginPage.getEmail();
+        }
+
+        Button cart = findViewById(R.id.checkout);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(VenuePage.this, FoodOptionsPage.class);
+                startActivity(intent);
+            }
+        });
 
         venueList = findViewById(R.id.roommates_list);
         ArrayList<String> venue = new ArrayList<String>() {{
@@ -47,7 +63,7 @@ public class VenuePage extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DatabaseHelper db = new DatabaseHelper(VenuePage.this);
-                boolean insert = db.insertFoodDrinks(venue.get(position), pVenue.get(position), "1");
+                boolean insert = db.insertFoodDrinks(email, venue.get(position), pVenue.get(position), "1");
 
                 androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(VenuePage.this, R.style.AlertDialogTheme);
                 final View view2 = getLayoutInflater().inflate(R.layout.layout_alert_dialog_amount, null);

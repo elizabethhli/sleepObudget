@@ -102,4 +102,9 @@ public class LoginPage extends Activity {
             }
         });
     }
+
+    public static String getEmail(){
+        return email_string;
+    }
+
 }

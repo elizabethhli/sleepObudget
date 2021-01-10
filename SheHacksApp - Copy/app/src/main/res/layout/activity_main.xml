@@ -17,26 +17,13 @@
         android:text="Don't have an account?"
         android:textColor="@color/darkblue"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/guest"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/guest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/regular"
-        android:text="Play as Guest."
-        android:textColor="@color/darkblue"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958" />
 
     <TextView
         android:id="@+id/welcome"
@@ -49,15 +36,15 @@
         android:layout_marginRight="291dp"
         android:layout_marginBottom="565dp"
         android:fontFamily="@font/bold"
-        android:text="Welcome to Choremates!"
+        android:text="Welcome to Speed-O-Budget!"
         android:textColor="@color/white"
-        android:textSize="50sp"
+        android:textSize="47sp"
         app:layout_constraintBottom_toTopOf="@+id/donthaveaccount"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307" />
+        app:layout_constraintVertical_bias="0.16" />
 
     <Button
         android:id="@+id/loginButton"

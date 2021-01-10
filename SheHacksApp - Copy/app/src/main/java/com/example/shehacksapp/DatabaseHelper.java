@@ -17,8 +17,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE user(email TEXT PRIMARY KEY, password TEXT)");
-        db.execSQL("CREATE TABLE food(name TEXT PRIMARY KEY, price TEXT, amount TEXT)");
-        db.execSQL("CREATE TABLE other(name TEXT PRIMARY KEY, price TEXT, amount TEXT)");
+        db.execSQL("CREATE TABLE food(email TEXT, name TEXT, price TEXT, amount TEXT)");
+//        db.execSQL("CREATE TABLE other(name TEXT PRIMARY KEY, price TEXT, amount TEXT)");
 
     }
 
@@ -68,9 +68,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return true;
     }//end method checkCredentials
 
-    public boolean insertFoodDrinks (String name, String price, String amount) {
+    public boolean insertFoodDrinks (String email, String name, String price, String amount) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("email", email);
         contentValues.put("name", name);
         contentValues.put("price", price);
         contentValues.put("amount", amount);
@@ -96,6 +97,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         long ins =  db.delete("food", "name=?", new String[]{name});
         return ins != -1;
+    }
+
+    public Cursor getName(String email){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select name from food where email=?", new String[]{email});
+        return cursor;
+    }
+
+    public Cursor getPrice(String email){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select price from food", null);
+        return cursor;
+    }
+
+    public Cursor getAmount(String email){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select amount from food", null);
+        return cursor;
     }
 
     public Cursor getRoommates(String email){

@@ -19,11 +19,27 @@ public class iceCreamPage extends AppCompatActivity {
     ListView iceCreamList;
     CustomAdapter customAdapter;
     Button back;
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ice_cream_page);
+
+        if (LoginPage.getEmail() == null || LoginPage.getEmail().equals("")) {
+            email = SignUpPage.getEmail();
+        } else {
+            email = LoginPage.getEmail();
+        }
+
+        Button cart = findViewById(R.id.checkout);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(iceCreamPage.this, FoodOptionsPage.class);
+                startActivity(intent);
+            }
+        });
 
         iceCreamList = findViewById(R.id.roommates_list);
         ArrayList<String> iceCream = new ArrayList<String>() {{
@@ -48,7 +64,7 @@ public class iceCreamPage extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DatabaseHelper db = new DatabaseHelper(iceCreamPage.this);
-                boolean insert = db.insertFoodDrinks(iceCream.get(position), pIceCream.get(position), "1");
+                boolean insert = db.insertFoodDrinks(email, iceCream.get(position), pIceCream.get(position), "1");
 
                 androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(iceCreamPage.this, R.style.AlertDialogTheme);
                 final View view2 = getLayoutInflater().inflate(R.layout.layout_alert_dialog_amount, null);
