@@ -48,7 +48,7 @@ public class DinnerPage extends AppCompatActivity {
         }};
 
 
-        customAdapter = new CustomAdapter(dinner, DinnerPage.this);
+        customAdapter = new CustomAdapter(dinner, pDinner,DinnerPage.this);
         dinnerList.setAdapter(customAdapter);
 
         dinnerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

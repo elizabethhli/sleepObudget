@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".DrinksPage"></activity>
+        <activity android:name=".BudgetPage"></activity>
+        <activity android:name=".DrinksPage" />
         <activity android:name=".ChangePassword" />
         <activity android:name=".ConfirmEmail" />
         <activity android:name=".DinnerPage" />
@@ -17,7 +18,6 @@
         <activity android:name=".iceCreamPage" />
         <activity android:name=".FoodOptionsPage" />
         <activity android:name=".CartPage" />
-        <activity android:name=".DrinkPage" />
         <activity android:name=".EntertainmentPage" />
         <activity android:name=".VenuePage" />
         <activity android:name=".ChipsPage" />

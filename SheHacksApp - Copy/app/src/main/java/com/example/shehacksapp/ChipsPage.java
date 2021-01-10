@@ -44,7 +44,7 @@ public class ChipsPage extends Activity {
             add("2.97");
         }};
 
-        customAdapter = new CustomAdapter(chips, ChipsPage.this);
+        customAdapter = new CustomAdapter(chips, pChips,ChipsPage.this);
         chipsList.setAdapter(customAdapter);
 
         chipsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

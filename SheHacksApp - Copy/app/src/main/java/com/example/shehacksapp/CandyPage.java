@@ -46,7 +46,7 @@ public class CandyPage extends AppCompatActivity {
             add("1.97");
         }};
 
-        customAdapter = new CustomAdapter(candy, CandyPage.this);
+        customAdapter = new CustomAdapter(candy, pCandy,CandyPage.this);
         candyList.setAdapter(customAdapter);
 
         candyList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -19,6 +19,7 @@ public class LoginPage extends Activity {
     Button login;
     EditText email, password;
     DatabaseHelper db;
+    public static String email_string;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,46 @@ public class LoginPage extends Activity {
                 Intent intent = new Intent(LoginPage.this, MainActivity.class);
                 startActivity(intent);
             }
-        }); 
+        });
+
+        db = new DatabaseHelper(this);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        login = findViewById(R.id.loginButton2);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String emailStr = email.getText().toString();
+                String passwordStr = password.getText().toString();
+                boolean checkCredentials = db.checkCredentials(emailStr, passwordStr);
+                if (emailStr.equals("")) {
+                    CustomAlertDialog.openDialogNoTitle(LoginPage.this, LoginPage.this,
+                            (ConstraintLayout) findViewById(R.id.layoutDialogContainer),
+                            "Please enter an email");
+                } else if (passwordStr.equals("")) {
+                    CustomAlertDialog.openDialogNoTitle(LoginPage.this, LoginPage.this,
+                            (ConstraintLayout) findViewById(R.id.layoutDialogContainer),
+                            "Please enter a password");
+                } else {
+                    if (checkCredentials) {
+                        email_string = email.getText().toString();
+                        Intent intent = new Intent(LoginPage.this, SleepoverChoicePage.class);
+                        startActivity(intent);
+                    } else {
+                        boolean emailExists = db.checkEmail(emailStr);
+                        if (emailExists) {
+                            CustomAlertDialog.openDialogNoTitle(LoginPage.this, LoginPage.this,
+                                    (ConstraintLayout) findViewById(R.id.layoutDialogContainer),
+                                    "No account found\nwith that email.");
+                        } else {
+                            CustomAlertDialog.openDialogNoTitle(LoginPage.this, LoginPage.this,
+                                    (ConstraintLayout) findViewById(R.id.layoutDialogContainer),
+                                    "Wrong email or\npassword");
+                        }//end else
+                    }//end else
+                }//end else
+            }//end method onClick
+        });//end onClickListened
 
         forgot_password = findViewById(R.id.forgot_password_Text);
         forgot_password.setOnClickListener(new View.OnClickListener() {

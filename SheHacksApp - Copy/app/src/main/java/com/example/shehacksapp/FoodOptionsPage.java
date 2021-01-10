@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class FoodOptionsPage extends AppCompatActivity {
     TextView chips, dinner, iceCream, candy;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,15 @@ public class FoodOptionsPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FoodOptionsPage.this, CandyPage.class);
+                startActivity(intent);
+            }
+        });
+
+        back = findViewById(R.id.backF);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FoodOptionsPage.this, SleepoverChoicePage.class);
                 startActivity(intent);
             }
         });

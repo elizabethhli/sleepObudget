@@ -24,7 +24,28 @@ public class SleepoverChoicePage extends AppCompatActivity {
             }
         });
         venue = findViewById(R.id.venuebutton);
+        venue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SleepoverChoicePage.this, VenuePage.class);
+                startActivity(intent);
+            }
+        });
         drinks = findViewById(R.id.drinksbutton);
+        drinks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SleepoverChoicePage.this, DrinksPage.class);
+                startActivity(intent);
+            }
+        });
         entertainment = findViewById(R.id.entertainmentbutton);
+        entertainment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SleepoverChoicePage.this, EntertainmentPage.class);
+                startActivity(intent);
+            }
+        });
     }
 }

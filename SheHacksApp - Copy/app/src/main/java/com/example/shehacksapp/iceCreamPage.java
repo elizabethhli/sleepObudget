@@ -41,7 +41,7 @@ public class iceCreamPage extends AppCompatActivity {
         }};
 
 
-        customAdapter = new CustomAdapter(iceCream, iceCreamPage.this);
+        customAdapter = new CustomAdapter(iceCream, pIceCream, iceCreamPage.this);
         iceCreamList.setAdapter(customAdapter);
 
         iceCreamList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

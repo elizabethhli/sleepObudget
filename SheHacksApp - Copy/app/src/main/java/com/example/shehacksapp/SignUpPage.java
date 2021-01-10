@@ -97,7 +97,7 @@ public class SignUpPage extends Activity {
                                         (ConstraintLayout)findViewById(R.id.layoutDialogContainer),
                                         "Registered Successfully!");
                                 email_string = emailStr;
-                                Intent intent = new Intent (SignUpPage.this, SleepoverChoicePage.class);
+                                Intent intent = new Intent (SignUpPage.this, BudgetPage.class);
                                 startActivity(intent);
                             }
                         } else {
