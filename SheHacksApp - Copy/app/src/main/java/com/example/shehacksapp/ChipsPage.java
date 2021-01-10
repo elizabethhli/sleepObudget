@@ -41,7 +41,6 @@ public class ChipsPage extends Activity {
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Intent intent = new Intent(ChipsPage.this, FoodOptionsPage.class);
                 Intent intent = new Intent(ChipsPage.this, CartPage.class);
                 startActivity(intent);
             }
