@@ -51,6 +51,6 @@ public class BudgetPage extends AppCompatActivity {
 
             }
         });
-
     }
+
 }
