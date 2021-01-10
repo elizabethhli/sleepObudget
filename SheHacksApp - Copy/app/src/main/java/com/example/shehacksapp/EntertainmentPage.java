@@ -20,6 +20,7 @@ public class EntertainmentPage extends AppCompatActivity {
     CustomAdapter customAdapter;
     Button back;
     String email;
+    public static double fullPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +71,7 @@ public class EntertainmentPage extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DatabaseHelper db = new DatabaseHelper(EntertainmentPage.this);
                 boolean insert = db.insertFoodDrinks(email, ent.get(position), pEnt.get(position), "1");
-
+                fullPrice = Double.parseDouble(pEnt.get(position));
                 androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(EntertainmentPage.this, R.style.AlertDialogTheme);
                 final View view2 = getLayoutInflater().inflate(R.layout.layout_alert_dialog_amount, null);
                 builder.setView(view2);
@@ -80,6 +81,7 @@ public class EntertainmentPage extends AppCompatActivity {
                     public void onClick(View v) {
                         db.updateFoodDrink(ent.get(position), ((EditText) view2.findViewById(R.id.roommate_name_edit)).getText().toString());
                         alertDialog.dismiss();
+                        fullPrice = fullPrice * Double.parseDouble(((EditText) view2.findViewById(R.id.roommate_name_edit)).getText().toString());
                     }
                 });
 
@@ -106,5 +108,8 @@ public class EntertainmentPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    public static double getPrice(){
+        return fullPrice;
     }
 }

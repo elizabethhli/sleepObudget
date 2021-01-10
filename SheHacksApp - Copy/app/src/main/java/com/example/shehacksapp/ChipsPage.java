@@ -20,8 +20,9 @@ public class ChipsPage extends Activity {
 
     ListView chipsList;
     CustomAdapter customAdapter;
-    Button back;
+    Button back, cart;
     String email;
+    public static double fullPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +37,12 @@ public class ChipsPage extends Activity {
             email = LoginPage.getEmail();
         }
 
-        Button cart = findViewById(R.id.checkout);
+        cart = findViewById(R.id.checkout);
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChipsPage.this, FoodOptionsPage.class);
+                // Intent intent = new Intent(ChipsPage.this, FoodOptionsPage.class);
+                Intent intent = new Intent(ChipsPage.this, CartPage.class);
                 startActivity(intent);
             }
         });
@@ -67,7 +69,7 @@ public class ChipsPage extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DatabaseHelper db = new DatabaseHelper(ChipsPage.this);
                 boolean insert = db.insertFoodDrinks(email, chips.get(position), pChips.get(position), "1");
-
+                fullPrice = Double.parseDouble(pChips.get(position));
                 androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(ChipsPage.this, R.style.AlertDialogTheme);
                 final View view2 = getLayoutInflater().inflate(R.layout.layout_alert_dialog_amount, null);
                 builder.setView(view2);
@@ -77,6 +79,7 @@ public class ChipsPage extends Activity {
                     public void onClick(View v) {
                         db.updateFoodDrink(chips.get(position), ((EditText) view2.findViewById(R.id.roommate_name_edit)).getText().toString());
                         alertDialog.dismiss();
+                        fullPrice = fullPrice * Double.parseDouble(((EditText) view2.findViewById(R.id.roommate_name_edit)).getText().toString());
                     }
                 });
 
@@ -105,6 +108,9 @@ public class ChipsPage extends Activity {
         });
     }
 
+    public static double getPrice(){
+        return fullPrice;
+    }
 }
 
 
