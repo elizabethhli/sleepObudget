@@ -18,14 +18,12 @@ public class IntroductionPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_introduction_page);
 
         tortoise = findViewById(R.id.imageView1);
         speech = findViewById(R.id.imageView2);
         text1 = findViewById(R.id.textView1);
         text2 = findViewById(R.id.textView2);
-
-
 
         bt = findViewById(R.id.button);
         bt.setOnClickListener(new View.OnClickListener() {
@@ -39,7 +37,7 @@ public class IntroductionPage extends AppCompatActivity {
                 }
                 else {
                     // start the next activity
-                    Intent intent = new Intent(IntroductionActivity.this, FoodOptionsPage.class);
+                    Intent intent = new Intent(IntroductionPage.this, BudgetPage.class);
                     startActivity(intent);
                 }
             }

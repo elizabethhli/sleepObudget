@@ -56,7 +56,7 @@ public class LoginPage extends Activity {
                 } else {
                     if (checkCredentials) {
                         email_string = email.getText().toString();
-                        Intent intent = new Intent(LoginPage.this, SleepoverChoicePage.class);
+                        Intent intent = new Intent(LoginPage.this, IntroductionPage.class);
                         startActivity(intent);
                     } else {
                         boolean emailExists = db.checkEmail(emailStr);
